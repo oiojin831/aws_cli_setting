@@ -43,3 +43,5 @@ default가 아닌경우는
 aws ec2 describe-instances --profile user2
 ```
 으로 사용해야한다.
+
+ --region us-east-1
