@@ -8,27 +8,14 @@
           "height": 60
         },
         "position": {
-          "x": 211,
-          "y": 81
+          "x": 210,
+          "y": 80
         },
         "z": 0,
         "embeds": [],
         "dependson": [
-          "107cd8c4-d7ee-4b3f-93d8-a0150bf5cff2",
           "69c41e76-b804-4063-8337-b17fa4c92c9e"
         ]
-      },
-      "107cd8c4-d7ee-4b3f-93d8-a0150bf5cff2": {
-        "size": {
-          "width": 60,
-          "height": 60
-        },
-        "position": {
-          "x": 350,
-          "y": 210
-        },
-        "z": 0,
-        "embeds": []
       },
       "69c41e76-b804-4063-8337-b17fa4c92c9e": {
         "size": {
@@ -67,7 +54,17 @@
       "Type": "AWS::EC2::Instance",
       "Properties": {
         "InstanceType": "t2.micro",
-        "ImageId": "ami-a21529cc"
+        "ImageId": "ami-a21529cc",
+        "KeyName": "dev-machine",
+        "BlockDeviceMappings": [
+          {
+            "DeviceName": "/dev/sda1",
+            "Ebs": {
+              "VolumeType": "gp2",
+              "VolumeSize": "30"
+            }
+          }
+        ]
       },
       "Metadata": {
         "AWS::CloudFormation::Designer": {
@@ -75,21 +72,8 @@
         }
       },
       "DependsOn": [
-        "EC2V3TYDX",
         "EC2SG2ALUQ"
       ]
-    },
-    "EC2V3TYDX": {
-      "Type": "AWS::EC2::Volume",
-      "Properties": {
-        "AvailabilityZone": "ap-northeast-1a",
-        "Size": "30"
-      },
-      "Metadata": {
-        "AWS::CloudFormation::Designer": {
-          "id": "107cd8c4-d7ee-4b3f-93d8-a0150bf5cff2"
-        }
-      }
     },
     "EC2SG2ALUQ": {
       "Type": "AWS::EC2::SecurityGroup",
