@@ -19,4 +19,8 @@ aws ec2 attach-volume --devise/dev/sda1 --volume-id instance-id
 
 http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html
 
-dev-machine-v1 file참조
+dev-machine file참조
+
+```bash
+aws cloudformation create-stack --stack-name dev-machine --template-url https://s3-ap-northeast-1.amazonaws.com/cf-templates-1oz3rylt2bho3-ap-northeast-1/2016269RmW-dev-machine3j8jnubvt4a3eoctyov5i2j4i
+```
