@@ -24,3 +24,8 @@ dev-machine file참조
 ```bash
 aws cloudformation create-stack --stack-name dev-machine --template-url https://s3-ap-northeast-1.amazonaws.com/cf-templates-1oz3rylt2bho3-ap-northeast-1/2016269RmW-dev-machine3j8jnubvt4a3eoctyov5i2j4i
 ```
+```bash
+sh -c "$(wget https://raw.githubusercontent.com/oiojin831/laptop/master/init.sh -O -)"
+```
+### Install plugin in vim  
+PlugInstall
